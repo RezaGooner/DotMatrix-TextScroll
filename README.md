@@ -44,9 +44,20 @@ The circuit has been fully simulated and tested using **Proteus**.
 ## 💻 Code Overview
 
 ```c
-char unsigned continue_text[] = {
-// Hex codes for scrolling characters in "Reza Guner"
-};
+void scroll_continuous_text() {
+    int start_col, i, j;
+    
+
+    for (start_col = 0; start_col < TOTAL_COLUMNS + 8; start_col++) {
+        for (j = 0; j < 10; j++) {
+            for (i = 0; i < 8; i++) { 
+                int text_col = start_col - i;
+                unsigned char col_data = (text_col >= 0 && text_col < TOTAL_COLUMNS) ? continuous_text[text_col] : 0x00;
+                send_to_matrix(~(1 << i), col_data);
+            }
+        }
+    }
+}
 ```
 
 - PORTA controls the active column selection (~(1 << i))
