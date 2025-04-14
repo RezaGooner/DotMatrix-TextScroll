@@ -1,0 +1,3 @@
+main DSTACK_USAGE:0 DSTACK_LEVEL:0 FILE:"dotmatrix.c" LINE:41
+scroll_continuous_text DSTACK_USAGE:9 DSTACK_LEVEL:9 FILE:"dotmatrix.c" LINE:26
+send_to_matrix DSTACK_USAGE:2 DSTACK_LEVEL:11 FILE:"dotmatrix.c" LINE:20
